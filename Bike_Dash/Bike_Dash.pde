@@ -15,12 +15,14 @@ void draw() {
 
 void keyPressed() {
   if (key == ' ') {
+    //player jumps
     player.speed = 15;
   }
 }
 
 void mousePressed() {
   if (mousePressed) {
+    //player jumps
     player.speed = 15;
   }
 }

@@ -1,5 +1,7 @@
 
 
+//rect(x,y,width,height)
+
 class Player {
   float speed;
   float playerX, playerY;
@@ -8,7 +10,7 @@ class Player {
   boolean move;
 
   Player () {
-    size = width/5;
+    size = width/10;
     tall = height/8;
     move = true;
     speed = .7;
@@ -22,6 +24,7 @@ class Player {
   }
 
   void update() {
+    //player is falling constantly
     playerY-=speed;
     speed-= 0.7;
   }
