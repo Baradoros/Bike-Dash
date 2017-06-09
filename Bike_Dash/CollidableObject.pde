@@ -14,32 +14,24 @@ class CollidableObject {
     this.y = y;
     this.Width = Width;
     this.Height = Height;
-    collider = new Collider("Box", x, y, Width, Height);
-  }
-
-  CollidableObject(int x, int y, int radius) {  // constructor for circle colliders
-    this.x = x;
-    this.y = y;
-    this.Width = radius;
-    this.Height = radius;
-    collider = new Collider("Circle", x, y, Width, Height);
+    collider = new Collider(x, y, Width, Height);
   }
 
   ////////////
   // UNTESTED
   ////////////
   boolean checkCollision(CollidableObject other) {
-    if (collider.type == "Box") {
       for (Point p : collider.corners) {  // loop through all corner points of this object
         // check if any of the corner points are inside the other collider volume
         if (abs((float)p.getX() - (float)collider.centerPoint.getX()) < other.collider.Width / 2 &&
           abs((float)p.getY() - (float)collider.centerPoint.getY()) < other.collider.Height) {
           collided = true;
+          other.collided = true;
           canCollide = false;
+          other.canCollide = false;
           return true;
         }
       }
-    }
     return false;
   }
 }
