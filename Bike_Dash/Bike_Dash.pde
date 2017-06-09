@@ -5,6 +5,7 @@ final int GAME_OVER = 1;
 final int MAIN_MENU = 2;
 final int HIGH_SCORES = 3;
 
+MainMenu mm = new MainMenu();
 
 void setup() {
   fullScreen();
@@ -22,7 +23,8 @@ void draw() {
     break;
     
     case MAIN_MENU:
-      mainMenu();
+      mm.update();
+      mm.drawMenu();
     break;
     
     case HIGH_SCORES:
@@ -36,16 +38,6 @@ void gameOver() {
   textSize(96);
   fill(255,0,0);
   text("GAME OVER", width / 2, height / 2);
-}
-
-void mainMenu() {
-  background(#249AFF);
-  textAlign(CENTER);
-  textSize(190);
-  fill(100);
-  text("BIKE DASH", width / 2, height / 4);
-  textSize(48);
-  text("PRESS SPACE TO START", width / 2, height * 0.75);
 }
 
 void keyPressed() {
