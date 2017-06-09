@@ -7,7 +7,6 @@ final int HIGH_SCORES = 3;
 
 MainMenu mm = new MainMenu();
 Player player;
-Scoreboard scoreboard;
 
 void setup() {
   rectMode(CENTER);
@@ -15,13 +14,9 @@ void setup() {
   background(200);
   currentState = MAIN_MENU;
   player = new Player();
-  scoreboard= new Scoreboard();
 }
 
 void draw() {
-  scoreboard.update();
-  scoreboard.drawScoreboard();
-
   switch(currentState) {
   case PLAY:
 
@@ -59,6 +54,8 @@ void keyPressed() {
       player.speed = 15;
     } else if (currentState == MAIN_MENU)
       currentState = PLAY;
+    else if (currentState == GAME_OVER)
+      currentState = MAIN_MENU;
   }
 }
 
@@ -69,5 +66,7 @@ void mousePressed() {
       player.speed = 15;
     } else if (currentState == MAIN_MENU)
       currentState = PLAY;
+    else if (currentState == GAME_OVER)
+      currentState = MAIN_MENU;
   }
 }

@@ -29,14 +29,14 @@ class MainMenu {
   }
 
   void manageClouds() {
-    if (currentTime < System.currentTimeMillis() - waitTime) {
+    if (currentTime < System.currentTimeMillis() - waitTime) {  // randomly spawn clouds
       currentTime = System.currentTimeMillis();
       waitTime = floor(random(500, 5000));
       if (clouds.size() < 15)
         clouds.add(new Cloud());
     }
 
-    for (int i = 0; i < clouds.size(); i++) {
+    for (int i = 0; i < clouds.size(); i++) {  // remove clouds that go offscreen
       if (clouds.get(i).x < -1200)
         clouds.remove(i);
     }
