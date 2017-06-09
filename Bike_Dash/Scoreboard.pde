@@ -1,17 +1,17 @@
 
 class Scoreboard {
-  int x;
+  int score;
   Scoreboard() {
-    x=0;
+    score=0;
   }
   void update() {
     //if (bike passes the pipe) {
-    //  x++;
+    //  score += 10;
     //}
   }
 
   void drawScoreboard() {
     textSize(15);
-    text( "Score " + x, width*.8, height*.1);
+    text( "Score " + score, width*.8, height*.1);
   }
 }
