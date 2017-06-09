@@ -12,6 +12,9 @@ class CollidableObject {
     collider = new Collider("Circle", 0, 0, 10, 10);
   }
 
+  ////////////
+  // UNTESTED
+  ////////////
   boolean checkCollision(CollidableObject other) {
     if (collider.type == "Box") {
       for (Point p : collider.corners) {  // loop through all corner points of this object
