@@ -9,7 +9,7 @@ final int HIGH_SCORES = 3;
 void setup() {
   fullScreen();
   background(200);
-  currentState = 1;
+  currentState = MAIN_MENU;
 }
 
 void draw() {
@@ -18,10 +18,11 @@ void draw() {
     break;
     
     case GAME_OVER:
-      drawGameOverScreen();
+      gameOver();
     break;
     
     case MAIN_MENU:
+      mainMenu();
     break;
     
     case HIGH_SCORES:
@@ -29,12 +30,22 @@ void draw() {
   }
 }
 
-void drawGameOverScreen() {
+void gameOver() {
   background(0);
   textAlign(CENTER);
   textSize(96);
   fill(255,0,0);
   text("GAME OVER", width / 2, height / 2);
+}
+
+void mainMenu() {
+  background(#249AFF);
+  textAlign(CENTER);
+  textSize(190);
+  fill(100);
+  text("BIKE DASH", width / 2, height / 4);
+  textSize(48);
+  text("PRESS SPACE TO START", width / 2, height * 0.75);
 }
 
 void keyPressed() {
