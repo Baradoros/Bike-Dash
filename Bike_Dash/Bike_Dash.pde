@@ -54,14 +54,20 @@ void gameOver() {
 
 void keyPressed() {
   if (key == ' ') {
-    //player jumps
-    player.speed = 15;
+    if (currentState == PLAY) {
+      //player jumps
+      player.speed = 15;
+    } else if (currentState == MAIN_MENU)
+      currentState = PLAY;
   }
 }
 
 void mousePressed() {
   if (mousePressed) {
-    //player jumps
-    player.speed = 15;
+    if (currentState == PLAY) {
+      //player jumps
+      player.speed = 15;
+    } else if (currentState == MAIN_MENU)
+      currentState = PLAY;
   }
 }
