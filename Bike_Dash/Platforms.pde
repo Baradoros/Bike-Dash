@@ -8,7 +8,7 @@ class Platforms {
   Platforms() {
     
     //platforms start from the right edge of the screen
-    x=width;
+    x= width;
     
     //random height of platforms
     y= floor (random (height-10, height-height/2));
