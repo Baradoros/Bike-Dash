@@ -4,7 +4,8 @@ class TestCollisionObject extends CollidableObject {
   }
   
   void drawSelf() {
-    
+    fill(0,0,255);
+    rect(x, y, Width, Height);
   }
   
 }
