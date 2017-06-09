@@ -3,6 +3,7 @@ ArrayList <Platforms> platforms;
 
 void setup() {
   fullScreen();
+<<<<<<< HEAD
   platforms = new ArrayList <Platforms>();
 }
 
@@ -17,4 +18,16 @@ void draw() {
       platforms.remove(i);
     }
   }
+=======
+  background(200);
+}
+
+void draw() {
+}
+
+void keyPressed() {
+}
+
+void mousePressed() {
+>>>>>>> master
 }
