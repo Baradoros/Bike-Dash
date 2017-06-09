@@ -14,7 +14,15 @@ void draw() {
   player.drawPLAYER();
   player.update();
     
-  
+    //distance between an old rectangle and a new rectangle will width/15
+    if (rectangles.get(0).xd == width - width/15) {
+      rectangles.add(new Rectangles());
+    }
+    
+    for (Rectangles r: rectangles) {
+      r.update();
+      r.drawRectangles();
+    }
 }
 
 void keyPressed() {
