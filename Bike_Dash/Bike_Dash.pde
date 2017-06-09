@@ -60,13 +60,11 @@ void keyPressed() {
 }
 
 void mousePressed() {
-  if (mousePressed) {
-    if (currentState == PLAY) {
-      //player jumps
-      player.speed = 15;
-    } else if (currentState == MAIN_MENU)
-      currentState = PLAY;
-    else if (currentState == GAME_OVER)
-      currentState = MAIN_MENU;
-  }
+  if (currentState == PLAY) {
+    //player jumps
+    player.speed = 15;
+  } else if (currentState == MAIN_MENU)
+    currentState = PLAY;
+  else if (currentState == GAME_OVER)
+    currentState = MAIN_MENU;
 }
