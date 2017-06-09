@@ -1,0 +1,1 @@
+    bikexpos = width/3;
