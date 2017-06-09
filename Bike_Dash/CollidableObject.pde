@@ -13,15 +13,16 @@ class CollidableObject {
   }
 
   boolean checkCollision(CollidableObject other) {
-
-    for (Point p : collider.corners) {  // loop through all corner points of this object
-      // check if any of the corner points are inside the other collider volume
-      if (abs((float)p.getX() - (float)collider.centerPoint.getX()) < other.collider.Width / 2 &&
+    if (collider.type == "Box") {
+      for (Point p : collider.corners) {  // loop through all corner points of this object
+        // check if any of the corner points are inside the other collider volume
+        if (abs((float)p.getX() - (float)collider.centerPoint.getX()) < other.collider.Width / 2 &&
           abs((float)p.getY() - (float)collider.centerPoint.getY()) < other.collider.Height) {
-            collided = true;
-            canCollide = false;
-            return true;
-          }
+          collided = true;
+          canCollide = false;
+          return true;
+        }
+      }
     }
     return false;
   }
