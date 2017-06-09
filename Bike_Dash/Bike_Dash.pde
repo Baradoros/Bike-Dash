@@ -7,6 +7,7 @@ final int HIGH_SCORES = 3;
 
 MainMenu mm = new MainMenu();
 Player player;
+Scoreboard scoreboard;
 
 void setup() {
   rectMode(CENTER);
@@ -14,9 +15,13 @@ void setup() {
   background(200);
   currentState = MAIN_MENU;
   player = new Player();
+  scoreboard= new Scoreboard();
 }
 
 void draw() {
+  scoreboard.update();
+  scoreboard.drawScoreboard();
+
   switch(currentState) {
   case PLAY:
 
